@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>SIPp</ProjectName>
+    <ProjectGuid>{26C78237-A4F2-405E-A9A9-433447C94C21}</ProjectGuid>
+    <RootNamespace>SIPped</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.23107.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SIPP_SOURCE)\src\openssld\include\;$(SIPP_SOURCE)\src\regex-2.7\include;$(SIPP_SOURCE)\src\pthread_w32.2\include;$(SIPP_SOURCE)\src\WpdPack\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_USE_32BIT_TIME_T;WIN32_LEAN_AND_MEAN;PCAPPLAY;_USE_OPENSSL;HAVE_PCAP_NEXT_EX;HAVE_STRUCT_TIMESPEC=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ShowIncludes>false</ShowIncludes>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+      <AdditionalOptions>/w34005 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>pthreadVC2.lib;wpcap.lib;ws2_32.lib;regex.lib;libeay32.lib;ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>LinkVerbose</ShowProgress>
+      <AdditionalLibraryDirectories>$(SIPP_SOURCE)\src\pthread_w32.2\lib;$(SIPP_SOURCE)\src\regex-2.7\lib;$(SIPP_SOURCE)\src\openssld\lib;$(SIPP_SOURCE)\src\WpdPack\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SIPP_SOURCE)\src\openssl\include\;$(SIPP_SOURCE)\src\regex-2.7\include;$(SIPP_SOURCE)\src\pthread_w32.2\include;$(SIPP_SOURCE)\src\WpdPack\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_USE_32BIT_TIME_T;WIN32_LEAN_AND_MEAN;PCAPPLAY;_USE_OPENSSL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>pthreadVC2.lib;wpcap.lib;ws2_32.lib;regex.lib;libeay32.lib;ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SIPP_SOURCE)\src\pthread_w32.2\lib;$(SIPP_SOURCE)\src\regex-2.7\lib;$(SIPP_SOURCE)\src\openssl\lib;$(SIPP_SOURCE)\src\WpdPack\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="actions.hpp" />
+    <ClInclude Include="call.hpp" />
+    <ClInclude Include="common.hpp" />
+    <ClInclude Include="CompositeDocument.hpp" />
+    <ClInclude Include="deadcall.hpp" />
+    <ClInclude Include="dialogstate.hpp" />
+    <ClInclude Include="infile.hpp" />
+    <ClInclude Include="listener.hpp" />
+    <ClInclude Include="logging.hpp" />
+    <ClInclude Include="message.hpp" />
+    <ClInclude Include="milenage.hpp" />
+    <ClInclude Include="opentask.hpp" />
+    <ClInclude Include="prepare_pcap.hpp" />
+    <ClInclude Include="reporttask.hpp" />
+    <ClInclude Include="rijndael.hpp" />
+    <ClInclude Include="scenario.hpp" />
+    <ClInclude Include="screen.hpp" />
+    <ClInclude Include="send_packets.hpp" />
+    <ClInclude Include="sipp.hpp" />
+    <ClInclude Include="sipp_globals.hpp" />
+    <ClInclude Include="sipp_sockethandler.hpp" />
+    <ClInclude Include="socketowner.hpp" />
+    <ClInclude Include="socket_helper.hpp" />
+    <ClInclude Include="sslcommon.hpp" />
+    <ClInclude Include="stat.hpp" />
+    <ClInclude Include="task.hpp" />
+    <ClInclude Include="transactionstate.hpp" />
+    <ClInclude Include="variables.hpp" />
+    <ClInclude Include="watchdog.hpp" />
+    <ClInclude Include="win32_compatibility.hpp" />
+    <ClInclude Include="xp_parser.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="actions.cpp" />
+    <ClCompile Include="applink.c" />
+    <ClCompile Include="auth.cpp" />
+    <ClCompile Include="call.cpp" />
+    <ClCompile Include="CompositeDocument.cpp" />
+    <ClCompile Include="deadcall.cpp" />
+    <ClCompile Include="dialogstate.cpp" />
+    <ClCompile Include="infile.cpp" />
+    <ClCompile Include="listener.cpp" />
+    <ClCompile Include="logging.cpp" />
+    <ClCompile Include="message.cpp" />
+    <ClCompile Include="milenage.cpp" />
+    <ClCompile Include="opentask.cpp" />
+    <ClCompile Include="prepare_pcap.cpp" />
+    <ClCompile Include="reporttask.cpp" />
+    <ClCompile Include="rijndael.cpp" />
+    <ClCompile Include="scenario.cpp" />
+    <ClCompile Include="screen.cpp" />
+    <ClCompile Include="send_packets.cpp" />
+    <ClCompile Include="sipp.cpp" />
+    <ClCompile Include="sipp_globals.cpp" />
+    <ClCompile Include="sipp_sockethandler.cpp" />
+    <ClCompile Include="socketowner.cpp" />
+    <ClCompile Include="socket_helper.cpp" />
+    <ClCompile Include="sslinit.cpp" />
+    <ClCompile Include="sslthreadsafe.cpp" />
+    <ClCompile Include="stat.cpp" />
+    <ClCompile Include="task.cpp" />
+    <ClCompile Include="transactionstate.cpp" />
+    <ClCompile Include="variables.cpp" />
+    <ClCompile Include="watchdog.cpp" />
+    <ClCompile Include="win32_compatibility.cpp" />
+    <ClCompile Include="xp_parser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
