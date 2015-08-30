@@ -42,7 +42,7 @@
 #include "xp_parser.hpp"
 
 #ifdef WIN32
-#define snprintf _snprintf
+//STUDIO2015 #define snprintf _snprintf
 
 #endif
 //

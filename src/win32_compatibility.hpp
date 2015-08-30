@@ -13,7 +13,7 @@
 #define strdup _strdup
 #define unlink _unlink
 
-#define snprintf _snprintf
+//STUDIO2015 #define snprintf _snprintf Removed for Studio 2015.
 #define ssize_t SSIZE_T
 
 int usleep(unsigned useconds);

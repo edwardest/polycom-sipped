@@ -47,7 +47,7 @@
 #include <limits.h>
 
 #ifdef WIN32
-#define snprintf _snprintf
+ //STUDIO2015 #define snprintf _snprintf
 #endif
 
 class stattask *stattask::instance = NULL;
@@ -230,7 +230,7 @@ void print_variable_list()
   }
   if(!found) {
     printed++;
-    printf("=> No action found on any messages"SIPP_ENDL);
+    printf("=> No action found on any messages" SIPP_ENDL);
   }
 
   printf(SIPP_ENDL);
